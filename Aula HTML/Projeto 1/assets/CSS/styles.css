@@ -1,0 +1,748 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "open sans", sans-serif;
+  font-size: 1.3rem;
+  background-color: #fff8f0;
+  overflow-x: hidden;
+}
+
+p {
+  text-transform: capitalize;
+}
+
+/* --- MENU --- */
+
+.menu {
+  display: flex;
+  align-items: center;
+  background-color: #5c4033;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 2000;
+  flex-wrap: wrap;
+}
+
+.logo-container img {
+  display: flex;
+  border-radius: 6.65rem;
+  width: 5rem;
+  height: auto;
+  margin-left: 12rem; /* ou outro valor que afaste do canto esquerdo */
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+  padding: 1rem 10rem;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #fff8f0;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.nav-links ul li a:hover {
+  color: #ff6f61;
+}
+
+.menu-toggle:hover,
+.menu-toggle.ativo {
+  color: #ff6f61;
+}
+
+/* Botão de menu escondido por padrão */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 790px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  body.menu-aberto main {
+    margin-top: 15rem; /*espaçamento entre a imagem e o menu aberto*/
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #4e342ea2;
+    z-index: 999;
+    padding: 1.25rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .conteudo-principal {
+    margin-top: 2rem; /* espaçamento entre o menu e o conteúdo */
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  /* Quando o menu estiver aberto, empurra o conteúdo */
+  header:has(.nav-links.active) + main {
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 791px) and (max-width: 1266px) {
+  .nav-links ul {
+    padding: 0 2rem; /* Menor padding lateral */
+    gap: 1.5rem; /* Menor espaço entre os itens */
+    flex-wrap: nowrap; /* Evita quebra de linha */
+    justify-content: center; /* Centraliza os links */
+  }
+
+  .menu {
+    flex-wrap: nowrap; /* Impede quebra da logo + menu */
+  }
+
+  .logo-container img {
+    margin-left: 1rem; /* Menor margem lateral da logo */
+  }
+}
+
+@media (max-width: 790px) {
+  .logo-container img {
+    margin-left: 2rem; /* Reduz a margem da logo em telas pequenas */
+  }
+
+  .menu {
+    padding: 1rem 1.5rem; /* Reduz o padding do menu */
+  }
+}
+
+@media (min-width: 1116px) and (max-width: 1211px) {
+  .logo-container img {
+    margin-left: 3rem; /* Reduz a margem da logo */
+  }
+
+  .nav-links ul {
+    padding: 1rem 3rem; /* Reduz o padding dos links */
+    gap: 1.5rem; /* Ajusta o espaçamento entre os itens */
+    justify-content: center;
+  }
+
+  .menu {
+    padding: 1rem 2rem;
+  }
+}
+
+/* --- Seção com as 9 receitas e suas respectivas imagens ---*/
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas */
+  gap: 5rem; /* Espaço entre as imagens */
+  justify-content: center;
+  padding: 10rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #ffe8dc;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  height: 17.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.item img {
+  width: 100%;
+  height: 190px; /* Altura fixa */
+  object-fit: cover; /* Preenche mantendo proporção, cortando se necessário */
+}
+
+.item p {
+  font-weight: bold;
+  height: 5.6rem; /* Altura fixa pro texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0 0.6rem;
+}
+
+.item p:hover {
+  color: #ff6f61;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+@media (min-width: 679px) and (max-width: 1039px) {
+  .galeria > .item:nth-last-child(1):nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-items: center;
+  }
+}
+
+/* Abaixo de 500px: uma coluna e centralização */
+@media (max-width: 500px) {
+  .galeria {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 18rem; /* Para limitar o tamanho dos cards */
+  }
+}
+
+/* --- CARROSSEL --- */
+
+.tutoriais {
+  width: 100vw;
+  background-color: #ffc491be;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.tutoriais h2 {
+  font-size: 1.7rem;
+  color: #502508;
+  margin-bottom: 0rem;
+  text-align: left;
+  padding-top: 25px;
+}
+
+.tutoriais h2:hover {
+  color: #502508;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #ff6f61;
+}
+
+/* 🔧 Carrossel fora da seção: largura total */
+.carrossel-container {
+  position: relative;
+  width: 100%;
+  background-color: #ffc491be;
+  overflow: hidden;
+  padding: 20px 0 30px 0;
+}
+
+.carrossel-wrapper {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 3.75rem; /* Aumente o padding para as setas */
+  overflow: hidden;
+}
+
+.tutoriais-carrossel {
+  display: flex;
+  gap: 1rem;
+  transition: scroll-left 0.3s ease;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Melhora o alinhamento */
+  -webkit-overflow-scrolling: touch; /* Suave no mobile */
+}
+
+.tutorial-item {
+  flex: 0 0 calc(25% - 0.75rem);
+  scroll-snap-align: start; /* Alinhamento preciso */
+  min-width: 0; /* tamanho mínimo para não ficar espremido */
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.tutorial-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.tutorial-item span {
+  height: 50px;
+  padding: 0.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4e342eea;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+/* Setas */
+.seta {
+  background-color: #fc7430;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.seta.esquerda {
+  left: 20px;
+  z-index: 100;
+}
+
+.seta.direita {
+  right: 20px;
+  z-index: 100;
+}
+
+@media (max-width: 1000px) {
+  .tutorial-item {
+    flex: 0 0 100% !important; /* Força 1 item por linha */
+    min-width: 100% !important; /* Garante que não quebre */
+  }
+
+  .carrossel-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    padding: 0 0.5rem; /* Reduz padding em mobile */
+  }
+}
+
+/* -- FORMULÁRIOS --*/
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 5rem auto;
+  gap: 10rem; /* espaço entre os formulários */
+  flex-wrap: wrap; /* em telas pequenas eles empilham */
+  align-items: stretch; /* Faz os formulários terem a mesma altura */
+  max-width: 1300px;
+}
+
+.form-section {
+  background-color: #fffaf5;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Isso empurra o botão para o fim */
+}
+
+textarea {
+  resize: none;
+  overflow-y: auto;
+  min-height: 80px;
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #5c4033;
+  margin-bottom: 20px;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-section label {
+  margin-top: 10px;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.form-section button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #5c4033;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-section button:hover {
+  background-color: #331e14;
+}
+
+.form-section:nth-of-type(2) form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Reduz o espaço entre os itens */
+}
+
+.form-section:nth-of-type(2) form > *:not(button) {
+  width: 100%; /* Mantém a largura total */
+  max-width: 500px; /* Controla a largura máxima dos campos */
+  margin: 3px 0px;
+}
+
+/* Mantém o botão com o estilo original */
+.form-section:nth-of-type(2) button {
+  margin-top: 110px;
+  width: 100%;
+}
+
+.form-section {
+  font-family: arial;
+  font-size: 17px;
+}
+
+@media (max-width: 660px) {
+  .form-container {
+    flex-direction: column; /* Empilha verticalmente */
+    align-items: center; /* Centraliza os formulários */
+    gap: 50px; /* Espaço entre eles */
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .form-section {
+    width: 100%;
+    max-width: 500px; /* Largura maior para melhor legibilidade */
+    min-width: auto; /* Evita que fique muito estreito */
+  }
+
+  @media (max-width: 355px) {
+    .form-section {
+      padding: 20px 15px; /* diminui padding interno */
+      font-size: 16px; /* ajusta fonte para não estourar */
+    }
+  }
+}
+
+/* -- RODAPÉ -- */
+footer {
+  background-color: #f7efe2;
+  font-family: Arial, sans-serif;
+  color: #333;
+  width: 100vw;
+  margin: 0;
+}
+
+.footer-container {
+  margin: 0 auto;
+  padding: 1rem 0 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.footer-top {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #d9c7a7;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 2rem 1rem;
+}
+
+.footer-section h3 {
+  color: #5c4033;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section li {
+  margin: 12px 0; /* Espaçamento vertical aumentado */
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex; /* Organização em flexbox */
+  align-items: center; /* Alinhamento vertical */
+  gap: 10px; /* Espaço entre ícone e texto*/
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-one {
+  padding-left: 3rem;
+}
+
+.whatsapp-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.canal-whatsapp h3 {
+  color: #5c4033;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.canal-whatsapp {
+  margin-right: 65px;
+}
+
+.botao-whats {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.botao-whats i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.botao-whats:hover {
+  background-color: #128c7e;
+}
+
+.email-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #d9c7a7;
+  border-radius: 4px;
+}
+
+.email-form button {
+  background-color: #5c4033;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  background-color: #5c4033;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 3rem auto 0;
+  text-align: center;
+}
+
+.social-icons a {
+  color: #f53e28;
+  font-size: 30px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* Animação dos ícones */
+
+.social-icons a:hover {
+  color: #b72a1d;
+  transform: translateY(-5px) scale(1.2);
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #b72a1d;
+  transition: width 0.3s;
+}
+
+.social-icons a:hover::after {
+  width: 100%;
+}
+
+.footer-section i {
+  color: #ec5746;
+  min-width: 25px; /* Espaço fixo para alinhamento */
+  text-align: center; /* Centralização  */
+  font-size: 1.1em; /* Tamanho proporcional */
+}
+
+.footer-bottom p {
+  font-size: 16px; /* Tamanho padrão */
+  font-weight: normal; /* REMOVI o negrito */
+  margin: 0;
+  padding: 5px 0;
+}
+
+.footer-bottom a {
+  color: white !important; /* ou outra cor que contraste com o fundo */
+  text-decoration: underline; /* opcional para parecer link */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 4rem;
+  right: 1.5rem;
+  background: #ffffff;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #000;
+  border: 0.1rem solid #ec5746;
+  text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .footer-logo {
+    margin: 0 0 20px 0; /* Centraliza a logo */
+  }
+
+  .social-icons {
+    margin: 20px 0; /* Remove as margens laterais grandes */
+    gap: 25px; /* Espaço mais compacto entre ícones */
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 1rem 1rem; /* Adiciona padding lateral */
+  }
+
+  .footer-section,
+  .canal-whatsapp {
+    max-width: 300px;
+    margin-bottom: 30px;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  .canal-whatsapp {
+    margin-right: 0; /* Remove a margem direita */
+    order: 2; /* Posiciona após Contate-nos */
+  }
+
+  .email-form input {
+    width: 90%; /* Campos ocupam toda a largura */
+  }
+
+  /* Ajuste específico para os ícones de contato */
+  .footer-section p {
+    justify-content: center; /* Centraliza ícone + texto */
+  }
+
+  .footer-one {
+    padding-left: 0;
+  }
+}

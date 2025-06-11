@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testes 3</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        background-color: #fff8f0;
+        overflow-x: hidden;
+      }
+
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 300px); /* 3 colunas */
+        flex-wrap: wrap;
+        gap: 90px; /* Espaço entre as imagens */
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .item {
+        background-color: #ffe8dc;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+        max-width: 350px;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.03);
+      }
+
+      .item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .item p {
+        padding: 15px;
+        font-weight: bold;
+        text-align: justify;
+      }
+
+      @media (max-width: 1200px) {
+        .galeria {
+          grid-template-columns: repeat(2, 1fr);
+          overflow-x: hidden;
+        }
+      }
+
+      @media (min-width: 851px) and (max-width: 1200px) {
+        .galeria {
+          max-width: 900px; /* ou outro valor que funcione bem */
+          margin: 0 auto 50px auto;
+          padding: 20px;
+          gap: 50px; /* pode ajustar o espaço entre os cards se quiser */
+        }
+      }
+
+      @media (max-width: 850px) {
+        .galeria {
+          grid-template-columns: 1fr;
+          overflow-y: hidden;
+          place-items: center;
+        }
+      }
+
+      /* -- RODAPÉ -- */
+      /* -- RODAPÉ -- */
+      footer {
+        background-color: #f7efe2;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        width: 100%;
+        margin: 0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 20px 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+
+      .footer-section h3 {
+        color: #5c4033;
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .whatsapp-section {
+        text-align: center;
+        margin: 0 auto 30px;
+        width: 100%;
+      }
+
+      .whatsapp-btn {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .email-form input {
+        padding: 8px;
+        border: 1px solid #d9c7a7;
+        border-radius: 4px;
+      }
+
+      .email-form button {
+        background-color: #5c4033;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .footer-bottom {
+        background-color: #5c4033;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+      }
+
+      .social-icons a {
+        color: #5c4033;
+        font-size: 24px;
+        transition: all 0.3s;
+      }
+
+      /* Layout específico para a imagem */
+      .footer-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+      }
+
+      .left-section {
+        grid-column: 1;
+      }
+
+      .middle-section {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .right-section {
+        grid-column: 3;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .footer-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .middle-section {
+          grid-column: 1;
+          order: 3;
+        }
+      }
+
+      /*TESTE FONTAW*/
+      .icon-box {
+        width: 40px;
+        height: 40px;
+        background-color: #0059ff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="galeria">
+      <div class="item">
+        <img
+          src="https://nxboats.com.br/wp-content/uploads/2023/11/marcas-de-carros-de-luxo-lamborghini.jpg"
+          alt="Bolo de chocolate"
+        />
+        <p>Bolo de Chocolate</p>
+      </div>
+      <div class="item">
+        <img
+          src="https://automotivoshopping.com.br/wp-content/uploads/2022/03/foto05emp-201-sf90-b10-768x440.webp"
+          alt="Lasanha caseira"
+        />
+        <p>
+          Lasanha à Bolonhesa isicing elit. Quos, quo veniam officiis
+          repellendus quidem iusto eum sunt quaerat tempore. Sequi veniam
+          laudantium voluptatum excepturi voluptatem? Natus aperiam asperiores
+          at tenetur?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Ullam excepturi laborum, possimus at officiis vel quas neque
+          architecto ea quia nulla quae libero iusto rerum
+        </p>
+      </div>
+      <div class="item">
+        <img
+          src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/01/Chevrolet-Tracker.jpg?w=420&h=240&crop=1&quality=85"
+          alt="Salada saudável"
+        />
+        <p>Salada Tropical</p>
+      </div>
+      <!-- Adicione mais .item conforme quiser -->
+      <div class="item">
+        <img
+          src="https://automotivoshopping.com.br/wp-content/uploads/2022/03/foto05emp-201-sf90-b10-768x440.webp"
+          alt="Lasanha caseira"
+        />
+        <p>BOLO DE CHURROS</p>
+      </div>
+      <div class="item">
+        <img
+          src="https://automotivoshopping.com.br/wp-content/uploads/2022/03/foto05emp-201-sf90-b10-768x440.webp"
+          alt="Lasanha caseira"
+        />
+        <p>BOLO DE CHURROS BOLO DE CHURROS</p>
+      </div>
+      <div class="item">
+        <img
+          src="https://automotivoshopping.com.br/wp-content/uploads/2022/03/foto05emp-201-sf90-b10-768x440.webp"
+          alt="Lasanha caseira"
+        />
+        <p>BOLO DE CHURROS maiss BOLO DE CHURROS</p>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-layout">
+          <div class="left-section footer-section">
+            <h3>CONTATE-NOS</h3>
+            <p>Rua Exemplo, 123 - SP</p>
+            <p>(11) 59999-9999</p>
+            <p>exp@sats. cota às 11h</p>
+            <p>amog@montar@contameaos.com</p>
+            <p>atmorgmont@contameaos.com</p>
+          </div>
+
+          <div class="middle-section">
+            <div class="whatsapp-section">
+              <h3>Entre em nosso canal no WhatsApp:</h3>
+              <a href="https://wa.me/5511999999999" class="whatsapp-btn"
+                >Entre</a
+              >
+            </div>
+
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <div class="right-section footer-section">
+            <h3>SOBRE NÓS</h3>
+            <ul>
+              <li>Quem somos</li>
+              <li>Pontos externos</li>
+              <li>Termos de uso</li>
+              <li>Precedente</li>
+              <li>Acuscite</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="footer-section"
+          style="text-align: center; margin-top: 40px"
+        >
+          <h3>RECEBA NOSSAS RECEITAS DIARIAMENTE EM SEU E-MAIL</h3>
+          <form class="email-form" style="max-width: 400px; margin: 0 auto">
+            <input type="email" placeholder="Seu email" />
+            <input type="text" placeholder="Recomeço" />
+            <button type="submit">Inscrever</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Desenvolvido por Ryan © 2005 • Receitas da Manola</p>
+      </div>
+    </footer>
+    <!--colado
+    <div class="footer-top">
+      <div class="footer-logo-redes">
+        <img
+          src="Projeto 1/assets/img/Logo.png"
+          alt="Logo Receitas da Mazola"
+          class="footer-logo"
+        />
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
+          <a href="https://youtube.com" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+
+          <a href="https://br.pinterest.com/" target="_blank"
+            ><i class="fa-brands fa-pinterest"></i
+          ></a>
+        </div>
+      </div>
+    </div>-->
+    <div class="icon-box">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-clock"></i>
+    </div>
+    <div class="icon-box" style="background-color: #25d366">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+  </body>
+</html>

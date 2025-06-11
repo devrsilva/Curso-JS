@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receitas da Mazola</title>
+
+    <style>
+      /*Remove os estilos padrão da lista*/
+      ul.ingredientes {
+        list-style: disc;
+        padding-left: 35px;
+        margin: 0;
+        gap: 60px; /* Espaçamento entre os itens */
+      }
+
+      /* Centraliza o menu de navegação */
+      nav ul {
+        display: flex; /* Faz os itens ficarem lado a lado */
+        justify-content: center; /* Centraliza os itens na horizontal */
+        gap: 150px; /* Espaçamento entre os itens */
+        list-style: none; /* Remove os marcadores padrão da lista */
+        padding: 0;
+      }
+
+      /* Estiliza os links */
+      a {
+        text-decoration: none; /* Remove o sublinhado */
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Estiliza a barra de navegação */
+      nav {
+        background-color: lightgray; /* Fundo cinza claro */
+        padding: 10px 0; /* Espaço interno acima/abaixo de 10px, e 0 nas laterais */
+        text-align: center; /* Centraliza o texto */
+      }
+
+      h1 {
+        text-align: center; /* Centraliza o texto */
+      }
+
+      /* Centraliza o "Sobre Mim" */
+      div h2 {
+        text-align: center;
+      }
+
+      #Imagem-receita {
+        width: 400px; /* Ajuste conforme necessário */
+        margin: 0 auto; /* Centraliza */
+        text-align: center;
+      }
+      #Imagem-receita img {
+        max-width: 100%;
+        height: auto; /* Mantém a proporção */
+        border-radius: 10px;
+        display: block;
+      }
+
+      .receita {
+        display: flex;
+        align-items: center; /* Alinha verticalmente */
+        justify-content: space-between; /* Espaço entre texto e imagem */
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .receita-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .ingredientes {
+        list-style: disc;
+        padding-left: 35px;
+        margin: 0;
+      }
+
+      .modo-preparo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px; /* Espaço entre os ingredientes e o modo de preparo */
+      }
+
+      .texto {
+        width: 55%; /* Ocupará 55% da largura */
+      }
+
+      .img-direita {
+        width: 40%; /* Ajuste conforme necessário */
+        margin-left: 20px;
+        min-width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Menu de navegação-->
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <h1>Bem-vindos ao Receitas da Mazola! 🍽️✨</h1>
+    <p>
+      Aqui você encontrará as melhores receitas, dicas incríveis e muito sabor
+      para transformar sua cozinha. Seja para o dia a dia ou para ocasiões
+      especiais, nossas receitas vão te surpreender. Prepare-se para explorar um
+      mundo de sabores com a gente! 😋🔥
+    </p>
+
+    <div class="receita-container">
+      <h2>Receita de Hoje</h2>
+      <b>Panqueca de Banana (Sem Farinha) 🍌🥞</b>
+
+      <!-- Lista não ordenada -->
+      <p><b>🔹Ingredientes:</b></p>
+      <ul class="ingredientes">
+        <li>1 banana madura 🍌</li>
+        <li>1 ovo 🥚</li>
+        <li>2 colheres de sopa de aveia (ou farinha de aveia) 🌾</li>
+        <li>1 colher de chá de fermento em pó 🧁</li>
+        <li>Canela a gosto (opcional) ✨</li>
+      </ul>
+
+      <div class="modo-preparo">
+        <div class="texto">
+          <!-- Lista ordenada -->
+          <p><b>🔹 Modo de preparo:</b></p>
+          <ol>
+            <li>Amasse bem a banana com um garfo.</li>
+            <li>Adicione o ovo e misture bem.</li>
+            <li>
+              Acrescente a aveia, o fermento e a canela, misturando até ficar
+              homogêneo.
+            </li>
+            <li>
+              Aqueça uma frigideira antiaderente e despeje pequenas porções da
+              massa.
+            </li>
+            <li>
+              Cozinhe em fogo baixo por cerca de 2 minutos de cada lado ou até
+              dourar.
+            </li>
+          </ol>
+        </div>
+        <img
+          src="img/Imagemreceita.webp"
+          alt="imagemreceita"
+          class="img-direita"
+        />
+      </div>
+    </div>
+
+    <div>
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou apaixonada por culinária e adoro criar receitas fáceis, rápidas e
+        deliciosas! No <b>Receitas da Mazola</b>, compartilho pratos simples,
+        com poucos ingredientes, para facilitar seu dia a dia na cozinha. Vem
+        cozinhar comigo! 🍽️✨
+      </p>
+    </div>
+  </body>
+</html>

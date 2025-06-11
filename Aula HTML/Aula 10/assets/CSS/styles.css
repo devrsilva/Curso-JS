@@ -1,0 +1,58 @@
+.heading {
+  transition: all 300ms ease-in-out;
+}
+
+.heading:hover {
+  background: green;
+}
+
+a {
+  /*Todos os link ficarão laranja*/
+  color: darkorange;
+}
+
+a:link {
+  /*Links que nunca foram visitados */
+  color: deeppink;
+}
+
+a:visited {
+  /*Links JÁ FORAM visitados pelo usuário */
+  color: firebrick;
+}
+
+a:hover {
+  background: darkslateblue;
+  color: white;
+  text-decoration: none; /*Não terá a linha embaixo*/
+}
+
+a:active {
+  background: darkslategray;
+  color: white;
+  text-decoration: none; /*Não terá a linha embaixo*/
+}
+
+.pai .lista li:last-child {
+  /*Seleciona apenas o ultimo filho*/ /*Quero selecionar apenas o 1º "first-child"*/
+  background: red;
+}
+
+input:required {
+  background: green;
+}
+
+p:not(.meio) {
+  /*Não ficará azul o paragrafo que estiver com a classe ".meio"*/
+  color: blue;
+}
+
+input:checked + p {
+  /*O 1º paragrafo apos o <p> ficará vermelho quando marcado o checked*/
+  background: red;
+}
+
+input:not(:checked) + p {
+  /*Quando não estiver checado o 1º paragrafo após o input ficará amarelo*/
+  background: yellow;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 7</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      table {
+        border-collapse: collapse; /* Une as bordas da tabela*/
+        width: 800px; /*Tamanho da tabela*/
+      }
+
+      table td,
+      table th {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left; /* Alinhou a tabela a esquerda */
+      }
+
+      table caption {
+        caption-side: top; /* Padrão: legenda no topo */
+        text-align: left;
+        font-style: italic;
+        font-size: 14px; /* Tamanho da descrição*/
+        margin-bottom: 5px; /*Espaço entre o caption e a tabela*/
+      }
+
+      tfoot td,
+      table th {
+        background: #ddd;
+      }
+
+      tfoot td {
+        font-style: italic;
+      }
+
+      .responsive-table {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Lorem ipsum dolor sit.</p>
+
+    <div class="responsive-table">
+      <table>
+        <!--↖Tabela-->
+        <caption>
+          Uma descrição para tabela
+        </caption>
+        <thead>
+          <!--↖Título da tabela-->
+          <tr>
+            <th>Título1</th>
+            <th>Título2</th>
+            <th>Título3</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!--↖Corpo da tabela-->
+          <tr>
+            <td>Corpo 1</td>
+            <td>Corpo 2</td>
+            <td>Corpo 3</td>
+          </tr>
+          <tr>
+            <td colspan="2">AQUI</td>
+            <!--td colspan = pega as duas colunas do lado.-->
+            <td>Corpo 3</td>
+          </tr>
+          <tr>
+            <td>Corpo 1</td>
+            <td>Corpo 2</td>
+            <td>Corpo 3</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <!--↖Rodapé da tabela-->
+          <tr>
+            <td colspan="2" rowspan="2"></td>
+            <td rowspan=""><strong>TOTAL:</strong></td>
+            <!-- "strong" deixar em negrito sem CSS-->
+          </tr>
+          <tr>
+            <td><strong>R$555</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste1</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .form-container {
+        display: flex;
+        justify-content: center;
+        gap: 90px; /* espaço entre os formulários */
+        flex-wrap: wrap; /* em telas pequenas eles empilham */
+        align-items: stretch; /* Faz os formulários terem a mesma altura */
+        margin: 40px auto;
+        max-width: 1300px;
+      }
+
+      .form-section {
+        background-color: #fffaf5;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Isso empurra o botão para o fim */
+      }
+
+      textarea {
+        resize: none;
+        overflow-y: auto;
+        min-height: 80px;
+      }
+
+      .form-section h2 {
+        text-align: center;
+        color: #5c4033;
+        margin-bottom: 20px;
+      }
+
+      .form-section form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .form-section label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .form-section input,
+      .form-section textarea {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+      }
+
+      .form-section button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #5c4033;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .form-section button:hover {
+        background-color: #331e14;
+      }
+
+      .form-section:nth-of-type(2) form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Reduz o espaço entre os itens */
+      }
+
+      .form-section:nth-of-type(2) form > *:not(button) {
+        width: 100%; /* Mantém a largura total */
+        max-width: 500px; /* Controla a largura máxima dos campos */
+        margin: 3px 0px;
+      }
+
+      /* Mantém o botão com o estilo original */
+      .form-section:nth-of-type(2) button {
+        margin-top: 110px;
+        width: 100%;
+      }
+
+      @media (max-width: 1000px) {
+        .form-container {
+          flex-direction: column; /* Empilha verticalmente */
+          align-items: center; /* Centraliza os formulários */
+          gap: 50px; /* Espaço entre eles */
+        }
+
+        .form-section {
+          max-width: 70%; /* Largura maior para melhor legibilidade */
+          min-width: 300px; /* Evita que fique muito estreito */
+        }
+      }
+
+      /* -- RODAPÉ -- */
+
+      footer {
+        background-color: #f7efe2;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        width: 100%;
+        margin: 0;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 30px 5% 20px; /* Padding lateral responsivo */
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .footer-logo-redes {
+        position: relative;
+        min-height: 150px; /* Espaço para o conteúdo */
+      }
+
+      .footer-logo {
+        max-height: 100px;
+        margin-left: 5%;
+      }
+
+      .footer-redes {
+        position: relative;
+        left: 50%;
+        transform: translateX (-50%);
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer-redes a:hover img {
+        transform: scale(1.1);
+      }
+
+      .footer-middle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 0 10px 30px;
+      }
+
+      .footer-section {
+        flex: 1 1 250px;
+      }
+
+      .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section p,
+      .footer-section li {
+        margin: 10px 0;
+        font-size: 14px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .footer-section ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-section input[type="email"] {
+        padding: 8px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+      }
+
+      .footer-section button {
+        padding: 8px;
+        background-color: #8b4513;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .footer-section button:hover {
+        background-color: #a0522d;
+      }
+
+      .footer-bottom {
+        background-color: #5c2c06;
+        color: #fff;
+        text-align: center;
+        padding: 15px 10px;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .social-icons a {
+        color: #f53e28;
+        font-size: 28px;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      /* Animação sofisticada para os ícones */
+
+      .social-icons a:hover {
+        color: #b72a1d; /* um tom mais escuro ao passar o mouse */
+        transform: translateY(-5px) scale(1.2);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icons a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: #b72a1d;
+        transition: width 0.3s;
+      }
+
+      .social-icons a:hover::after {
+        width: 100%;
+      }
+
+      /* WhatsApp section */
+      .whatsapp-section {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .whatsapp-btn {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 15px;
+        transition: all 0.3s;
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #128c7e;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer-middle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 0 5% 30px; /* Padding lateral responsivo */
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .footer-middle i {
+        color: #ec5746;
+        margin-right: 8px;
+      }
+
+      .footer-bottom {
+        background-color: #5c2c06;
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 14px;
+        width: 100%; /* Ocupa toda a largura */
+        margin: 0;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .footer-top {
+          flex-direction: column;
+          padding: 20px 5%;
+        }
+
+        .footer-logo {
+          margin: 0 0 20px 0;
+        }
+
+        .footer-redes {
+          position: static;
+          transform: none;
+          margin: 20px 0;
+        }
+
+        .social-icons {
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <section class="form-section">
+        <h2>Envie sua Receita</h2>
+        <form>
+          <label for="nome">Seu Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu Nome"
+            required
+          />
+
+          <label for="email">Seu E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Fulano007@gmail.com"
+            required
+          />
+
+          <label for="receita">Nome da Receita:</label>
+          <input
+            type="text"
+            id="receita"
+            name="receita"
+            placeholder="Bolo de Milho"
+            required
+          />
+
+          <label for="ingredientes">Ingredientes:</label>
+          <textarea
+            id="ingredientes"
+            name="ingredientes"
+            rows="4"
+            required
+          ></textarea>
+
+          <label for="modo">Modo de Preparo:</label>
+          <textarea id="modo" name="modo" rows="4" required></textarea>
+
+          <button type="submit">Enviar Receita</button>
+        </form>
+      </section>
+
+      <section class="form-section">
+        <h2>Fale Conosco</h2>
+        <form>
+          <label for="nome-contato">Nome:</label>
+          <input
+            type="text"
+            id="nome-contato"
+            name="nome-contato"
+            placeholder="Digite seu Nome"
+            required
+          />
+
+          <label for="email-contato">E-mail:</label>
+          <input
+            type="email"
+            id="email-contato"
+            name="email-contato"
+            placeholder="Fulano007@gmail.com"
+            required
+          />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-logo-redes">
+          <img
+            src="Projeto 1/assets/img/Logo.png"
+            alt="Logo Receitas da Mazola"
+            class="footer-logo"
+          />
+
+          <div class="footer-redes">
+            <div class="whatsapp-section">
+              <h3>Entre em nosso canal no WhatsApp</h3>
+              <a
+                href="https://wa.me/5511999999999"
+                class="whatsapp-btn"
+                target="_blank"
+                >Entre agora</a
+              >
+            </div>
+
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com" target="_blank"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a href="https://youtube.com" target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://br.pinterest.com/" target="_blank"
+                ><i class="fab fa-pinterest"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-section">
+          <h3>Contate-nos</h3>
+          <p>
+            <i class="fa-solid fa-location-dot fa-lg"></i> Rua Exemplo, 123 - SP
+          </p>
+          <p><i class="fa-solid fa-phone fa-lg"></i> (11) 99999-9999</p>
+          <p><i class="fa-solid fa-clock fa-lg"></i> Seg-Sáb: 09h às 17h</p>
+          <p>
+            <i class="fa-solid fa-envelope fa-lg"></i>
+            contato@receitasmazola.com
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope fa-lg"></i>
+            atendimento@receitasmazola.com
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Sobre nós</h3>
+          <ul>
+            <li><a href="#">Quem somos</a></li>
+            <li><a href="#">Política editorial</a></li>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Anuncie</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Receba nossas receitas diariamente em seu e-mail</h3>
+          <form>
+            <input type="email" placeholder="Seu e-mail" required />
+            <button type="submit">Inscrever</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Desenvolvido por Ryan © 2025</p>
+      </div>
+    </footer>
+  </body>
+</html>

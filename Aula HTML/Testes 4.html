@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste 4</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* -- RODAPÉ -- */
+      footer {
+        background-color: #f7efe2;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        width: 100%;
+        margin: 0;
+      }
+
+      .footer-container {
+        margin: 0 auto;
+        padding: 15px 50px 50px;
+        max-width: 100%;
+      }
+
+      .footer-top {
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid #d9c7a7;
+      }
+
+      .footer-logo {
+        width: 150px;
+        margin-left: 10px;
+      }
+
+      .footer-middle {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0 0;
+      }
+
+      .footer-section h3 {
+        color: #5c4033;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .footer-section p,
+      .footer-section li {
+        margin: 12px 0; /* Espaçamento vertical aumentado */
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex; /* Organização em flexbox */
+        align-items: center; /* Alinhamento vertical */
+        gap: 10px; /* Espaço entre ícone e texto*/
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .footer-section a:hover {
+        text-decoration: underline;
+      }
+
+      .whatsapp-section {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .canal-whatsapp h3 {
+        color: #5c4033;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .canal-whatsapp {
+        margin-right: 65px;
+      }
+
+      .botao-whats {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .botao-whats i {
+        margin-right: 8px;
+        font-size: 18px;
+      }
+
+      .botao-whats:hover {
+        background-color: #128c7e;
+      }
+
+      .email-form input {
+        width: 70%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #d9c7a7;
+        border-radius: 4px;
+      }
+
+      .email-form button {
+        background-color: #5c4033;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .footer-bottom {
+        background-color: #5c4033;
+        color: white;
+        text-align: center;
+        padding: 1px 0;
+        width: 100%;
+        margin: 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 40px;
+        margin: 60px 600px 0px;
+      }
+
+      .social-icons a {
+        color: #f53e28;
+        font-size: 30px;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      /* Animação sofisticada para os ícones */
+
+      .social-icons a:hover {
+        color: #b72a1d;
+        transform: translateY(-5px) scale(1.2);
+        text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icons a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: #b72a1d;
+        transition: width 0.3s;
+      }
+
+      .social-icons a:hover::after {
+        width: 100%;
+      }
+
+      .footer-section i {
+        color: #ec5746; /* Cor marrom do tema */
+        min-width: 25px; /* Espaço fixo para alinhamento */
+        text-align: center; /* Centralização perfeita */
+        font-size: 1.1em; /* Tamanho proporcional */
+      }
+
+      /* Responsividade */
+      @media (max-width: 800px) {
+        .footer-top {
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 20px;
+        }
+
+        .footer-logo {
+          margin: 0 0 20px 0; /* Centraliza a logo */
+        }
+
+        .social-icons {
+          margin: 20px 0; /* Remove as margens laterais grandes */
+          gap: 25px; /* Espaço mais compacto entre ícones */
+        }
+
+        .footer-middle {
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 15px; /* Adiciona padding lateral */
+        }
+
+        .footer-section,
+        .canal-whatsapp {
+          max-width: 300px;
+          margin-bottom: 30px;
+          text-align: center; /* Centraliza o conteúdo */
+        }
+
+        .canal-whatsapp {
+          margin-right: 0; /* Remove a margem direita */
+          order: 2; /* Posiciona após Contate-nos */
+        }
+
+        .email-form input {
+          width: 100%; /* Campos ocupam toda a largura */
+        }
+
+        /* Ajuste específico para os ícones de contato */
+        .footer-section p {
+          justify-content: center; /* Centraliza ícone + texto */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-top">
+          <img
+            src="Projeto 1/assets/img/Logo.png"
+            alt="Logo Receitas da Mazola"
+            class="footer-logo"
+          />
+
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://br.pinterest.com/" target="_blank"
+              ><i class="fab fa-pinterest"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-middle">
+          <div class="footer-section">
+            <h3>Contate-nos</h3>
+            <p>
+              <i class="fa-solid fa-location-dot fa-lg"></i>Rua Exemplo, 123 -
+              SP
+            </p>
+            <p><i class="fa-solid fa-phone fa-lg"></i>(11) 59999-9999</p>
+            <p><i class="fa-solid fa-clock fa-lg"></i>Seg-Sáb: 09h às 17h</p>
+            <p>
+              <i class="fa-solid fa-envelope fa-lg"></i
+              >contato@receitasmazola.com
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope fa-lg"></i
+              >atendimento@receitasmazola.com
+            </p>
+          </div>
+
+          <div class="canal-whatsapp">
+            <h3>
+              Entre em nosso<br />
+              canal no WhatsApp:
+            </h3>
+            <a href="https://wa.me/seulink" target="_blank" class="botao-whats">
+              <i class="fab fa-whatsapp"></i> Entrar
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Sobre nós</h3>
+            <ul>
+              <li><a href="#">Quem somos</a></li>
+              <li><a href="#">Política editorial</a></li>
+              <li><a href="#">Termos de uso</a></li>
+              <li><a href="#">Privacidade</a></li>
+              <li><a href="#">Anuncie</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Receba nossas receitas diariamente em seu e-mail</h3>
+            <form class="email-form">
+              <input type="email" placeholder="Seu email" />
+              <button type="submit">Inscrever</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Desenvolvido por Ryan © 2025 • Receitas da Mazola •</p>
+      </div>
+    </footer>
+  </body>
+</html>

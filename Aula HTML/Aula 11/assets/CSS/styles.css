@@ -1,0 +1,17 @@
+ul li::after {
+  /*"after "dps do conteúdo e "before" antes do conteúdo*/
+  /*Pseudo-classes ":" e Pseudo-elementos"::"*/
+  content: "-";
+  background: red;
+  color: white;
+  display: block;
+}
+
+p {
+  font-size: 24px;
+}
+
+.form-field::placeholder {
+  /*Estiliza apenas 1 placeholder - selecionando com uma classe aleatoria nesse caso ".form-field" e será aplicado somente nesse */
+  color: red;
+}

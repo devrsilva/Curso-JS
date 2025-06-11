@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste2</title>
+    <style>
+      body {
+        background-color: #fff8f0;
+        overflow-x: hidden;
+      }
+
+      /*Carrossel*/
+
+      .tutoriais {
+        width: 100%;
+        background-color: #ffc491be;
+        padding-left: 2rem;
+      }
+
+      .tutoriais h2 {
+        font-size: 1.7rem;
+        color: #5e2c0a;
+        margin-bottom: 0rem;
+        text-align: left;
+        padding-top: 25px;
+      }
+      .tutoriais h2:hover {
+        color: #502508;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s;
+        color: #ff6f61;
+      }
+
+      /* 🔧 Carrossel fora da seção: largura total */
+      .carrossel-container {
+        position: relative;
+        width: 100vw;
+        background-color: #ffc491be;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      .carrossel-wrapper {
+        overflow: hidden;
+        padding: 10px 80px; /* espaço para as setas visuais dos dois lados */
+        max-width: 100%;
+      }
+      .tutoriais-carrossel {
+        display: flex;
+        gap: 1rem;
+        transition: scroll-left 0.3s ease;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .tutorial-item {
+        flex: 0 0 calc((100vw - 160px - 2rem) / 3); /* 100vw menos espaço das setas e gaps */
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tutorial-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .tutorial-item span {
+        height: 80px;
+        padding: 0.5rem;
+        color: #8a3b00;
+        font-weight: bold;
+        font-size: 0.95rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; /* sem a faixa salmão */
+      }
+
+      /* Setas */
+      .seta {
+        background-color: #fc7430;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      .seta.esquerda {
+        left: 15px;
+      }
+
+      .seta.direita {
+        right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Carrossel -->
+
+    <section class="tutoriais">
+      <h2>Tutoriais</h2>
+    </section>
+
+    <div class="carrossel-container">
+      <button class="seta esquerda" onclick="scrollCarrossel(-1)">
+        &#8249;
+      </button>
+
+      <div class="carrossel-wrapper">
+        <div class="tutoriais-carrossel" id="carrossel">
+          <a
+            href="https://youtube.com/video1"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="sopa.jpg" alt="Como Fazer Sopa de Tomate" />
+            <span>Como Fazer Sopa de Tomate</span>
+          </a>
+          <a
+            href="https://youtube.com/video2"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="bolo.jpg" alt="Bolo de Chocolate" />
+            <span>Bolo de Chocolate</span>
+          </a>
+          <a
+            href="https://youtube.com/video3"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="macarrao.jpg" alt="Macarrão ao Molho" />
+            <span>Macarrão ao Molho</span>
+          </a>
+          <a
+            href="https://youtube.com/video4"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="frango.jpg" alt="Frango Crocante" />
+            <span>Frango Crocante</span>
+          </a>
+          <a
+            href="https://youtube.com/video4"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="frango.jpg" alt="Frango Crocante" />
+            <span>Frango Crocante</span>
+          </a>
+          <a
+            href="https://youtube.com/video4"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="frango.jpg" alt="Frango Crocante" />
+            <span>Frango Crocante</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="seta direita" onclick="scrollCarrossel(1)">&#8250;</button>
+    </div>
+
+    <!--JAVA-->
+
+    <script>
+      function scrollCarrossel(direcao) {
+        const carrossel = document.getElementById("carrossel");
+        const item = carrossel.querySelector(".tutorial-item");
+        const itemWidth = item.offsetWidth + 16; // item + gap
+        carrossel.scrollLeft += direcao * itemWidth * 3; // rolar 3 por vez
+      }
+    </script>
+  </body>
+</html>

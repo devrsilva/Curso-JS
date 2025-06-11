@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 6</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        background: red;
+      }
+
+      nav a {
+        color: #ffffff; /*Cor da letra*/
+        text-decoration: none; /*Remove sublinhado e outros estilos do texto.*/
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        padding: 15px 20px;
+        display: block;
+        text-transform: uppercase; /*Deixou o texto em maiusculo*/
+      }
+      nav a:hover {
+        /*HOVER Para passar o mouse encima e fazer uma "sombra"*/
+        background: rgba(0, 0, 0, 0.3); /*Cor da sombra*/
+      }
+
+      nav {
+        display: flex; /*Alinha a caixa do texto*/
+        align-items: center; /*Alinha o menu do meio da tela*/
+        justify-content: center; /*Alinha ao centro*/
+      }
+
+      nav ul {
+        display: flex; /* Todos os filhos da <ul> ficaram alinhados em linha*/
+        list-style: none; /*Tirar as bolinhas da lista*/
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <ul>
+      <li>Item 2</li>
+      <li>Item 4</li>
+      <li>Item 3</li>
+      <li>Item 5</li>
+    </ul>
+
+    <ol type="1" start="20">
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ol>
+
+    <dl>
+      <!--Define o bloco da lista de definições.-->
+
+      <dt>Café</dt>
+      <!--Representa o termo a ser definido.-->
+      <dd>bebida preta quente</dd>
+      <!--Contém a descrição ou definição do termo.-->
+      <dt>Café</dt>
+      <dd>bebida preta quente</dd>
+    </dl>
+  </body>
+</html>

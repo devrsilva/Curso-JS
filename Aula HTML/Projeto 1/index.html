@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receitas da Mazola</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Federo&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/favicon_mazola_round.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/CSS/styles.css" />
+  </head>
+  <body>
+    <!-- MENU-->
+    <header>
+      <div class="menu">
+        <div class="logo-container">
+          <img src="assets/img/logo.png" alt="Logo da Receitas da Mazola" />
+        </div>
+
+        <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#Receitas">Receitas</a></li>
+            <li><a href="#Tutoriais">Tutoriais</a></li>
+            <li><a href="#Envie sua Receita">Envie sua Receita</a></li>
+            <li><a href="#Contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- GRADE COM AS 9 IMAGENS-->
+    <main>
+      <div class="conteudo-principal" id="Receitas">
+        <section class="galeria">
+          <div class="item">
+            <img
+              src="https://www.delicia.com.br/wp-content/uploads/fly-images/1941/media1062bolo-de-churros-1366x500.jpg"
+              alt="Bolo de Churros"
+            />
+            <p>BOLO DE CHURROS</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://www.delicia.com.br/wp-content/uploads/fly-images/1945/media1067bologeladodelicia-1366x500.jpg"
+              alt="Bolo Gelado de Coco"
+            />
+            <p>BOLO GELADO DE COCO</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://static.itdg.com.br/images/230-130/e53bf4c0574f7a777e8e1af815ce9dad/34.jpeg"
+              alt="Bolo de Milho"
+            />
+            <p>BOLO DE MILHO</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://www.receitasnestle.com.br/sites/default/files/styles/cropped_recipe_card_new/public/srh_recipes/5cbfbedf0918d65f14b28ea8a73168cb.webp?itok=bFD0x3kB"
+              alt="Bomba de Chocolate"
+            />
+            <p>BOMBA DE CHOCOLATE</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://www.receitasnestle.com.br/sites/default/files/styles/cropped_recipe_card_new/public/srh_recipes/c1b6536a63c81d1c97dace21b2573ffc.webp?itok=4RGb7Msp"
+              alt="Bem-Casado"
+            />
+            <p>BEM - CASADO</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://www.receitasnestle.com.br/sites/default/files/styles/cropped_recipe_card_new/public/srh_recipes/e16ba344aac8cea45d780b1b54b150bd.webp?itok=mbxzj937"
+              alt="Olho de Sogra"
+            />
+            <p>OLHO DE SOGRA</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://content.paodeacucar.com/wp-content/uploads/2017/05/receitas-de-drinks-caipirinha.jpg"
+              alt="Caipirinha"
+            />
+            <p>CAIPIRINHA</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://content.paodeacucar.com/wp-content/uploads/2017/05/receitas-de-drinks-manhattan.jpg"
+              alt="Manhattan"
+            />
+            <p>MANHATTAN</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="https://content.paodeacucar.com/wp-content/uploads/2018/06/negroni-texto.jpg"
+              alt="Negroni"
+            />
+            <p>NEGRONI</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- CARROSSEL-->
+    <section class="tutoriais" id="Tutoriais">
+      <h2>Tutoriais</h2>
+    </section>
+
+    <div class="carrossel-container">
+      <button class="seta esquerda" onclick="scrollCarrossel(-1)">
+        &#8249;
+      </button>
+
+      <div class="carrossel-wrapper">
+        <div class="tutoriais-carrossel" id="carrossel">
+          <a
+            href="https://youtu.be/tWcYLB0kkXk"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/Macarrão com Molho de Queijo Cremoso.png"
+              alt="Macarrão Cremoso"
+            />
+            <span>Macarrão Cremoso</span>
+          </a>
+          <a
+            href="https://youtu.be/nYzVI4IxLI0"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/EMPADÃO DE FRANGO SUPER CREMOSO.jpg"
+              alt="Empadão de Frango Super Cremoso"
+            />
+            <span>Empadão de Frango Super Cremoso</span>
+          </a>
+          <a
+            href="https://youtu.be/zu7B2g_YyFQ"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/Torta de Frango Dourada e Cremosa.png"
+              alt="Torta de Frango"
+            />
+            <span>Torta de Frango</span>
+          </a>
+          <a
+            href="https://youtu.be/Rg6kyGLyezk"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/BOLO GELADO DE DOCE DE LEITE COM COCO.jpg"
+              alt="Bolo Gelado de Doce de Leite com Coco"
+            />
+            <span>Bolo Gelado de Doce de Leite com Coco</span>
+          </a>
+          <a
+            href="https://youtu.be/kSCOEy7WwNM"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/PAVÊ ESPECIAL DE PÁSCOA.jpg"
+              alt="Pavê Especial de Páscoa"
+            />
+            <span>Pavê Especial de Páscoa</span>
+          </a>
+          <a
+            href="https://youtu.be/1HAQHBgDD1g"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/COMO FAZER COLOMBA PASCAL.jpg"
+              alt="Como Fazer Colomba Pascal"
+            />
+            <span>Como Fazer Colomba Pascal</span>
+          </a>
+          <a
+            href="https://youtu.be/z2_mScbzA4U"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/PANQUECA DE FORNO BOLONHESA AO MOLHO BRANCO.jpg"
+              alt="Panqueca de Forno Bolonhesa ao Molho Branco"
+            />
+            <span>Panqueca de Forno Bolonhesa ao Molho Branco</span>
+          </a>
+          <a
+            href="https://youtu.be/uO35lH89qZ4"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/BOLO DE CENOURA SUPER FOFINHO COM CASQUINHA DE CHOCOLATE.jpg"
+              alt="Bolo de Cenoura Super Fofinho com Casquinha de Chocolate"
+            />
+            <span
+              >Bolo de Cenoura Super Fofinho com Casquinha de Chocolate</span
+            >
+          </a>
+          <a
+            href="https://youtu.be/e253RBStYGI"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/CACHORRO QUENTE DE FORNO.jpg"
+              alt="Cachorro Quente de Forno"
+            />
+            <span>Cachorro Quente de Forno</span>
+          </a>
+          <a
+            href="https://youtu.be/ZGIoEt2RXZw"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/Frango Frito do KFC.jpg"
+              alt="Frango Frito do KFC"
+            />
+            <span>Frango Frito do KFC</span>
+          </a>
+          <a
+            href="https://youtu.be/d_Q6_ZTIBUE"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img
+              src="assets/img/Mousse de Maracujá Perfeito.jpg"
+              alt="Mousse de Maracujá Perfeito"
+            />
+            <span>Mousse de Maracujá Perfeito</span>
+          </a>
+          <a
+            href="https://youtu.be/njDwPplB5mk"
+            target="_blank"
+            class="tutorial-item"
+          >
+            <img src="assets/img/Cueca Virada.jpg" alt="Cueca Virada" />
+            <span>Cueca Virada </span>
+          </a>
+        </div>
+      </div>
+
+      <button class="seta direita" onclick="scrollCarrossel(1)">&#8250;</button>
+    </div>
+
+    <!-- FORMULÁRIOS -->
+
+    <div class="form-container" id="Envie sua Receita">
+      <section class="form-section">
+        <h2>Envie sua Receita</h2>
+        <form>
+          <label for="nome">Seu Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Digite seu Nome"
+            required
+          />
+
+          <label for="email">Seu E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Fulano007@gmail.com"
+            required
+          />
+
+          <label for="receita">Nome da Receita:</label>
+          <input
+            type="text"
+            id="receita"
+            name="receita"
+            placeholder="Bolo de Milho"
+            required
+          />
+
+          <label for="ingredientes">Ingredientes:</label>
+          <textarea
+            id="ingredientes"
+            name="ingredientes"
+            rows="4"
+            required
+          ></textarea>
+
+          <label for="modo">Modo de Preparo:</label>
+          <textarea id="modo" name="modo" rows="4" required></textarea>
+
+          <button type="submit">Enviar Receita</button>
+        </form>
+      </section>
+
+      <section class="form-section">
+        <h2>Fale Conosco</h2>
+        <form>
+          <label for="nome-contato">Nome:</label>
+          <input
+            type="text"
+            id="nome-contato"
+            name="nome-contato"
+            placeholder="Digite seu Nome"
+            required
+          />
+
+          <label for="email-contato">E-mail:</label>
+          <input
+            type="email"
+            id="email-contato"
+            name="email-contato"
+            placeholder="Fulano007@gmail.com"
+            required
+          />
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+      <div class="footer-container" id="Contato">
+        <div class="footer-top">
+          <img
+            src="assets/img/logo.png"
+            alt="Logo Receitas da Mazola"
+            class="footer-logo"
+          />
+
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://br.pinterest.com/" target="_blank"
+              ><i class="fab fa-pinterest"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-middle">
+          <div class="footer-section">
+            <h3>Contate-nos</h3>
+            <p>
+              <i class="fa-solid fa-location-dot fa-lg"></i>📍Avenida Gourmet,
+              820 – Centro, São Paulo – SP
+            </p>
+            <p><i class="fa-solid fa-phone fa-lg"></i>📞 (64) 99170-2715</p>
+            <p><i class="fa-solid fa-clock fa-lg"></i>🕘Seg-Sáb: 09h às 17h</p>
+            <p>
+              <i class="fa-solid fa-envelope fa-lg"></i
+              >📧contato@receitasmazola.com
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope fa-lg"></i
+              >📧atendimento@receitasmazola.com
+            </p>
+          </div>
+
+          <div class="canal-whatsapp">
+            <h3>
+              Entre em nosso<br />
+              canal no WhatsApp:
+            </h3>
+            <a
+              href="https://www.whatsapp.com/?lang=pt_BR"
+              target="_blank"
+              class="botao-whats"
+            >
+              <i class="fab fa-whatsapp"></i> Entrar
+            </a>
+          </div>
+
+          <div class="footer-section">
+            <h3>Sobre nós</h3>
+            <ul>
+              <li><a href="#">Quem Somos</a></li>
+              <li><a href="#">Política Editorial</a></li>
+              <li><a href="#">Termos de Uso</a></li>
+              <li><a href="#">Privacidade</a></li>
+              <li><a href="#">Anuncie</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section footer-one">
+            <h3>
+              Receba nossas receitas <br />
+              diariamente em seu e-mail
+            </h3>
+            <form class="email-form">
+              <input type="email" placeholder="Seu email" />
+              <button type="submit">Inscrever</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Desenvolvido por Ryan • Receitas da Mazola •</p>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#">⮙</a>
+
+    <!-- JAVA -->
+    <script>
+      // JAVA MENU
+
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav-links");
+      const body = document.body;
+
+      // Ao clicar no menu
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active"); // mostra/esconde o menu
+        body.classList.toggle("menu-aberto"); // ajusta o conteúdo da página
+        toggle.classList.toggle("ativo"); // adiciona/remove classe ativa no botão
+      });
+
+      // Fecha o menu ao clicar em qualquer link do menu
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          body.classList.remove("menu-aberto");
+          toggle.classList.remove("ativo");
+        });
+      });
+
+      // Formatação do texto das receitas para começar com maiúscula
+      document.querySelectorAll("p").forEach((p) => {
+        let texto = p.textContent.toLowerCase();
+        p.textContent = texto.replace(/\b\w/g, (c) => c.toUpperCase());
+      });
+
+      //JAVA CARROSSEL
+      function scrollCarrossel(direcao) {
+        const carrossel = document.getElementById("carrossel");
+        const item = carrossel.querySelector(".tutorial-item");
+        const itemWidth = item.offsetWidth + 16; // item + gap
+
+        // Verifica se a tela é menor que 1000px
+        const isMobile = window.innerWidth <= 1000;
+
+        // Rola 1 item em mobile, 4 em desktop
+        const scrollAmount = isMobile ? itemWidth : itemWidth * 4;
+
+        carrossel.scrollLeft += direcao * scrollAmount;
+      }
+    </script>
+  </body>
+</html>
