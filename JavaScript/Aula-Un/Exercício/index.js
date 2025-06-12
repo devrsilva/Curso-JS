@@ -1,5 +1,5 @@
 console.log(
   'Meu nome é "Ryan". Estou aprendendo JavaScript às',
-  09,
+  9,
   "da manhã."
 );
