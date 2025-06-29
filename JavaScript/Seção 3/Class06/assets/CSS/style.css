@@ -1,0 +1,18 @@
+body {
+  background-color: #006b75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
